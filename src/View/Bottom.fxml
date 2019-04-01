@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefWidth="1200.0" styleClass="background" stylesheets="@WarView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.BottomView">
+	<children>
+		<AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="background" stylesheets="@WarView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<children>
+				<SplitPane dividerPositions="0.5" prefHeight="99.0" prefWidth="1198.0" styleClass="background" stylesheets="@WarView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					<items>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="background" stylesheets="@WarView.css">
+							<children>
+								<TableView fx:id="tableView" disable="true" layoutX="704.0" layoutY="-239.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="97.0" prefWidth="448.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+									<columns>
+										<TableColumn fx:id="missielsFired" prefWidth="130.0" text="טילים ששוגרו" />
+										<TableColumn fx:id="missielsHit" prefWidth="154.0" text="טילים שפגעו" />
+										<TableColumn fx:id="launcherHit" prefWidth="156.0" text="משגרי טילים שהושמדו" />
+										<TableColumn fx:id="damageCol" prefWidth="150.0" text="סכום הנזק הכולל" />
+									</columns>
+								</TableView>
+							</children>
+						</AnchorPane>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="background" stylesheets="@WarView.css">
+							<children>
+								<TabPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="138.0" prefWidth="596.0" stylesheets="@WarView.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+									<tabs>
+										<Tab text="הוספת משגר">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="tab-header-background" stylesheets="@WarView.css">
+													<children>
+														<Button layoutX="256.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleAddLauncher" text="הוספה" />
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+										<Tab text="הוספת מיירט טילים">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="background" stylesheets="@WarView.css">
+													<children>
+														<Button layoutX="264.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleAddMissDest" text="הוספה" />
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+										<Tab text="הוספת מיירט משגרים">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="background" stylesheets="@WarView.css">
+													<children>
+														<Button layoutX="243.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleAddLauncherDest" text="הוספה" />
+														<ChoiceBox fx:id="type" layoutX="56.0" layoutY="22.0" prefWidth="150.0" />
+                                          <Label layoutX="24.0" layoutY="26.0" prefHeight="18.0" prefWidth="123.0" text="סוג :" />
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+										<Tab text="יירוט משגר">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="background" stylesheets="@WarView.css">
+													<children>
+														<ChoiceBox fx:id="launchers" layoutX="182.0" layoutY="20.0" prefWidth="150.0" />
+														<Label layoutX="12.0" layoutY="24.0" prefHeight="18.0" prefWidth="164.0" text="בחר את המשגר ליירוט :" />
+														<Button layoutX="423.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleAddLauncherIntercep" text="יירוט" />
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+										<Tab text="יירוט טיל">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="background" stylesheets="@WarView.css">
+													<children>
+														<ChoiceBox fx:id="missiels" layoutX="192.0" layoutY="22.0" prefWidth="150.0" />
+														<Label layoutX="5.0" layoutY="23.0" prefHeight="18.0" prefWidth="159.0" text="בחר את הטיל ליירוט :" />
+														<Button layoutX="429.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleMissileIntercep" text="יירוט" />
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+										<Tab styleClass="backgroud" text="שיגור טיל">
+											<content>
+												<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="background" stylesheets="@WarView.css">
+													<children>
+														<Button layoutX="507.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleMissileLaunch" text="שיגור" />
+														<ChoiceBox fx:id="destination" layoutX="73.0" layoutY="1.0" prefWidth="150.0" styleClass="label-bright" stylesheets="@WarView.css" />
+														<Label layoutX="3.0" layoutY="43.0" prefHeight="18.0" prefWidth="123.0" text="נזק :" />
+														<Label layoutX="5.0" layoutY="4.0" prefHeight="18.0" prefWidth="152.0" stylesheets="@WarView.css" text="יעד הטיל :" />
+														<TextField fx:id="damage" layoutX="74.0" layoutY="31.0" prefHeight="21.0" prefWidth="171.0" styleClass="text-field" stylesheets="@WarView.css" />
+														<Label layoutX="246.0" layoutY="5.0" prefHeight="18.0" prefWidth="123.0" text="זמן תעופה :" />
+														<TextField fx:id="flyTime" layoutX="312.0" layoutY="1.0" prefHeight="20.0" prefWidth="171.0" styleClass="text-field" stylesheets="@WarView.css" />
+													</children>
+												</AnchorPane>
+											</content>
+										</Tab>
+									</tabs>
+								</TabPane>
+							</children>
+						</AnchorPane>
+					</items>
+				</SplitPane>
+			</children>
+		</AnchorPane>
+	</children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane styleClass="background" stylesheets="@WarView.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.LeftView">
+	<children>
+		<AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="553.0" prefWidth="117.0" styleClass="table-view" stylesheets="@WarView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<children>
+				<TreeTableView fx:id="tableView" layoutX="14.0" layoutY="88.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="491.0" prefWidth="276.0" styleClass="column-header-background" stylesheets="@WarView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					<columns>
+						<TreeTableColumn fx:id="col1" prefWidth="275.0" text="אובייקט" />
+					</columns>
+				</TreeTableView>
+			</children>
+		</AnchorPane>
+	</children>
+</AnchorPane>

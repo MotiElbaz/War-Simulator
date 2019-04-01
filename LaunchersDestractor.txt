@@ -1,0 +1,4 @@
+04/07/2018 19:27:52	-->	Program Launcher Destructor #LD100
+Trying to destruct launcher # L104
+Destruct result: success!
+
